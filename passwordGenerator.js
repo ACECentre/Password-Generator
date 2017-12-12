@@ -30,9 +30,13 @@ function getPassword(length) {
 
     //Join Password into a single string
     var password = temp.join('-');
+    
+    var numbers = "0123456789";
+    var rnum = Math.floor(Math.random() * numbers.length);
+    var randomnumber = parseInt(numbers.substring(rnum,rnum+1));
 
     //Capatalize Password
-    password = password.charAt(0).toUpperCase() + password.slice(1);
+    password = password.charAt(0).toUpperCase() + password.slice(1)+randomnumber;
 
     //TODO: Optionally insert a random underscore inside the password string
 
@@ -40,7 +44,7 @@ function getPassword(length) {
 }
 
 function displayPassword() {
-    var pw = getPassword(4);
+    var pw = getPassword(3);
     document.getElementById("password").innerHTML = pw;
 }
 
