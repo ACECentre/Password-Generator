@@ -7,6 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="passwordGenerator.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"></script>
+
 </head>
 <body id="home">
     <div class="container">
@@ -37,10 +39,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="alert alert-info">
-                <strong>Info</strong> Triple click on the password and press CTRL + C to copy the password to your clipboard.
+            <div class="alert alert-info" id="infobox">
+                <button class="button" id="copy-button" data-clipboard-target="#password">Copy this password</button>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    (function(){
+    	new Clipboard('#copy-button');
+	})();
+	document.getElementById('infobox').style.display = 'none';
+    </script>
 </body>
 </html>

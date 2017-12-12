@@ -46,6 +46,8 @@ function getPassword(length) {
 function displayPassword() {
     var pw = getPassword(3);
     document.getElementById("password").innerHTML = pw;
+    document.getElementById('infobox').style.display = 'block';
+
 }
 
 function getDictionarySize() {
