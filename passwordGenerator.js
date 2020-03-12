@@ -30,7 +30,7 @@ function getPassword(length) {
 
     //Capitalize One of the words
     var uCaseItem = Math.floor(Math.random() * temp.length);
-    temp[uCaseItem].charAt(0).toUpperCase()+temp[uCaseItem].slice(1);
+    temp[uCaseItem] = temp[uCaseItem].charAt(0).toUpperCase()+temp[uCaseItem].slice(1);
 
 	// Create a Random number 
     var numbers = "0123456789";
