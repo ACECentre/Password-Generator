@@ -3,41 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>Ace Centre Password Generator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="passwordGenerator.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 </head>
 <body id="home">
     <div class="container">
-        <div class="row"><h1>Ace Centre Password Generator</h1></div>
+        <div class="row"><h2 class="display-4">Ace Centre Password Generator</h2></div>
         <div class="row">
-            <medium>
+            <p>
                 This website will generate a random but easy to remember password using common words. The passwords generated are strong enough for use to protect sensitive information. <br />
                 Passwords are based on <a href="http://xkcd.com/936/" title="'Password Strength' on xkcd">xkcd 936</a> and you can test the strength of the generated passwords here:  <a href="https://howsecureismypassword.net/" target="_blank">How Secure Is My Password?</a>
                 <br />
                 From a forked project from <a href="https://github.com/eth0za/Password-Generator">eth0za</a>.
-            </medium>
+            </p>
         </div>
         <div class="row">
             <br />
         </div>
-        <div class="jumbotron row" display: flex;>
+        <div class="jumbotron jumbotron-fluid row">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-3">
-                        <a class="btn btn-primary btn-lg" href="#" role="button" display: flex; justify-content: center; onclick="displayPassword();">Generate password</a>
+                    <div class="col-3">
+                        <button class="btn btn-lg btn-primary" href="#" role="button" justify-content: center; onclick="displayPassword();">Generate<span class="far fa-gem ml-1"></span></button>
                     </div>
-                    <div class="col-xs-9" style="padding-top:0.7%">			
-			    <div class="input-group">
-				<form><input id="password" type="text" value="" />
-				<span class="input-group-button"><button class="btn" type="button"  data-clipboard-target="#password"><img class="clippy" src="https://raw.githubusercontent.com/zenorocha/clipboard.js/gh-pages/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button></span>
-            </form>
-            </div>
+                    <div class="col-5" >			
+                        <div class="input-group">
+                        <form><input id="password" type="text" value="" size="80%" class="form-control form-control-lg"/></form>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
+                    <div class="col-4" id="copyButton" style="display:none;">
+                        <button class="btn btn-lg btn-danger btn-outline-danger" href="#" role="button" justify-content: center; data-clipboard-target="#password" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">Copy</button>
+                    </div>
                 </div>
             </div>
         </div>  
@@ -45,7 +45,8 @@
     <script type="text/javascript">
     (function(){
     	new ClipboardJS('.btn');
+        $('[data-toggle="tooltip"]').tooltip();
 	})();
-    </script>
+   </script>
 </body>
 </html>
